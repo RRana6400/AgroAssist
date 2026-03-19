@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/register_style.css" />
+  </head>
+  <body>
+    <div class="register-page">
+      <div class="register">
+        <div class="register-heading">
+          <div class="logo">
+            <img src="/static/images/Digital Farming.png" alt="LOGO" />
+          </div>
+          <!-- <h2 class="registerHeading">AggroAssist</h2> -->
+          <br />
+        </div>
+        <form action="/register" method="post">
+          <input
+            class="inputs"
+            type="text"
+            name="username"
+            placeholder="Username"
+            required
+          />
+          <input
+            class="inputs"
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+          <input
+            class="inputs"
+            type="password"
+            name="confirm-password"
+            placeholder="Confirm password"
+            required
+          />
+          <input
+            class="inputs"
+            type="email"
+            name="email"
+            placeholder="E-mail address"
+            required
+          />
+          {% if error %}
+          <div class="message-register-form"> {{error}}...<a href="/register" id="try-again-link"> Got it !</a> </div>
+          {% endif %}
+          <div class="register-btn-div">
+            <button class="register-btn">Register</button>
+          </div>
+          <div class="login-route">
+            <p>Have an account? <a id="Sign-In" href="/login">Sign In</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

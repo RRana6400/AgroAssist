@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/login_style.css" />
+    <link rel="stylesheet" href="/static/css/weather.css" />
+    <link rel="stylesheet" href="/static/css/record_manage.css" />
+    <link rel="stylesheet" href="/static/css/index_style.css">
+    <link rel="stylesheet" href="/static/css/mandi_style.css">
+    <link rel="stylesheet" href="/static/css/home_style.css">
+  </head>
+  <body>
+    <div class="outer-div">
+      <div class="sidebar-div">
+        <a href="/home">
+          <div class="title-div">
+            <div class="logo">
+              <img src="/static/images/Digital Farming.png" alt="LOGO" />
+            </div>
+          </div>
+        </a>
+        <br />
+        <hr />
+        <ul class="sidebar-options">
+          <a href="/record_management" class="link-options">
+            <li class="options">Records</li>
+          </a>
+
+          <a href="/weather" class="link-options">
+            <li class="options">Weather</li>
+          </a>
+
+          <a href="/mandi" class="link-options"><li class="options">Mandi</li></a>
+          <a href="" class="link-options"><li class="options">Calender</li></a>
+          <a href="" class="link-options"><li></li></a>
+        </ul>
+      </div>
+      <div class="content-div">
+        <div class="header-div">
+          <div class="header-text-div">
+            <h1 class="header-text">Namaste ! {{name}}...</h1>
+            <h5 class="header-text">
+              Welcome to your Farming Assistance, AgroAssist.
+            </h5>
+          </div>
+          <div class="logout-div">
+            <a href="/logout" class="logout-options">Logout</a>
+          </div>
+        </div>
+
+        <div class="slide-it">
+          <div class="body-div" id="body-id">
+            {% block content %} {% endblock content %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/static/js/htmx.min.js"></script>
+    <script>
+      const dialog = document.getElementById("updateDialog");
+
+      function openUpdateDialog(id, currentText) {
+        event.preventDefault();
+        // Fill the hidden ID and the input with existing data
+        document.getElementById("modal_record_no").value = id;
+        document.getElementById("modal_new_text").value = currentText;
+
+        // Show the box as a modal (blocks the rest of the page)
+        dialog.showModal();
+      }
+
+      function closeDialog() {
+        dialog.close();
+      }
+    </script>
+  </body>
+</html>

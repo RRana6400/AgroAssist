@@ -1,0 +1,94 @@
+
+
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="weather-app-div">
+
+      <div class="current-place-weather-div">
+        <div class="search-div">
+          <input
+            type="text"
+            placeholder="Search for places..."
+            id="search-id"
+          />
+          <button id="search-btn-id"></button>
+        </div>
+        <div class="temperature-div">
+          <div class="weather-logo">
+            <img id="img-id" src="/static/images/Weather Icon.jpg" alt="" />
+          </div>
+          <div class="temperature-status-div">
+            <div class="temperature-inner-div">
+              <h1 class="temperature">
+              <span id="temp-id">23.3</span>°
+            </h1>
+            </div>
+            <div class="day-time-div">
+            <p><span id="day">Monday</span> | <span id="time">1:00</span></p>
+          </div>
+          </div>
+          <hr />
+          <div class="current-place-name-div">
+            <h3 id="place-name-id">Haridwar</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="extra-info-div">
+        <div class="other-places-weather-div">
+          <h2 style="padding: 8px">Some Common Places...</h2>
+          <div class="other-place-cards">
+            <div class="other-divs"></div>
+            <div class="other-divs"></div>
+            <div class="other-divs"></div>
+            <div class="other-divs"></div>
+            <div class="other-divs"></div>
+            <div class="other-divs"></div>
+          </div>
+        </div>
+        <div class="current-place-weather-info-div">
+           <h2 style="padding: 11px;margin-left: 40%;">Today's Highlight...</h2>
+
+          <div class="today-highlights-div">
+            <div class="outer-today-highlight">
+              <div class="today--highlight">
+                <p id="attribute-id">Weather Condition</p>
+                  <div class="value"><img src="" id="weather-condition-id"></img></div>
+                  <div class="unit"></div>
+              </div>
+              <div class="today--highlight">
+                <p id="attribute-id">Wind</p>
+                  <div class="value"><span id="wind-speed-id">23</span></div>
+                  <div class="unit">m/sec</div>
+              </div>
+              <div class="today--highlight">
+                <p id="attribute-id">Sunrise & Sunset</p>
+                  <div class="value"><span id="sunrise-id"></span><span id="sunset-id"></span></div>
+                  <div class="unit"></div>
+              </div>
+            </div>
+            <div class="outer-today-highlight">
+              <div class="today--highlight">
+                <p id="attribute-id">Pressure</p>
+                  <div class="value"><span id="pressure-id">1333</span></div>
+                  <div class="unit">hPa</div>
+              </div>
+              <div class="today--highlight">
+                <p id="attribute-id">Humidity</p>
+                  <div class="value"><span id="humidity-id">12</div>
+                  <div class="unit">%</div>
+              </div>
+              <div class="today--highlight">
+                <p id="attribute-id">Visibility</p>
+                  <div class="value"><span id="visibility-id">1.3</div>
+                  <div class="unit"> km</div>
+              </div>
+            </div>
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+<script src="/static/js/weather.js"></script>
+  {% endblock content %}
