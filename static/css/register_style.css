@@ -1,0 +1,84 @@
+ * {
+        margin: 0;
+        padding: 0;
+      }
+      .register-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../images/pexels-bence-szemerey-337043-15203356.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 100%;
+        height: 750px;
+      }
+      .register {
+        background: linear-gradient(to bottom,white,white,rgb(161, 234, 161));
+        width: 400px;
+        height: 500px;
+        border-radius: 15px;
+        padding: 25px 10px;
+        background-color: white;
+      }
+
+      .register-heading,
+      form {
+        justify-self: center;
+        text-align: center;
+      }
+      .inputs {
+        width: 80%;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        
+      }
+      .register-btn {
+        width: 80%;
+        margin: 30px 0px;
+        padding: 10px;
+        background: linear-gradient(to right, rgb(89, 200, 89), yellow);
+        border: 0px;
+        border-radius: 5px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+      }
+      .register-btn:hover {
+        background: linear-gradient(to left, rgb(89, 200, 89), yellow);
+      }
+      .register-btn:active {
+        background: linear-gradient(to right, rgb(89, 200, 89), yellow);
+      }
+      #Sign-In {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+      }
+      .login-route {
+        color: rgba(0, 0, 0, 0.452);
+      }
+      .logo {
+        display: flex;
+        width: 80px;
+        height:80px;
+        justify-self: center;
+        /* border-radius: 10px; */
+        background-color: rgb(12, 98, 69);
+        /* box-shadow: 1px 1px 8px 4px black; */
+      }
+
+      .message-register-form{
+        width: 100%;
+        border: 1px solid rgb(49, 109, 39);
+        border-radius: 5px;
+        padding: 5px 1px;
+        margin-top: 5px;
+        background: radial-gradient(rgba(255, 255, 0, 0.250),rgba(255, 0, 0, 0.250));
+        
+      }
+      #try-again-link{
+        display: inline;
+        text-decoration: none; 
+        color: rgb(65, 108, 32);
+        font-weight: 600;
+      }

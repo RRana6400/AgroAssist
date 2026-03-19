@@ -1,0 +1,110 @@
+* {
+        margin: 0;
+        padding: 0;
+      }
+      .login-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(../images/pexels-fotios-photos-18005301.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 100%;
+        height: 750px;
+      }
+      .login {
+        background: linear-gradient(to bottom,white,white,rgb(161, 234, 161));
+        width: 400px;
+        height: 500px;
+        border-radius: 15px;
+        padding: 25px 10px;
+        background-color: white;
+      }
+
+      .login-heading {
+        justify-self: center;
+        text-align: center;
+      }
+      form {
+        width: 100%;
+        margin-top: 40px;
+        justify-self: center;
+        text-align: center;
+      }
+      .username-email-option{
+        width: 85%;
+        /* border: 1px solid black; */
+        display: flex;
+        justify-self: center;
+      }
+      #email-username-input{
+        width: 50%;
+        margin-right: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        display: block;
+      }
+      .choice-option{
+        /* border: 1px solid black; */
+        display: block;
+        width: 40%;
+        
+        /* padding: 5px; */
+      }
+      .username-option{
+                /* border: 0.1px solid black; */
+                width: 100%;
+                height: 49%;
+                margin-bottom: 1px;
+                font-size: 15px;
+                display: flex;
+
+      }
+      .email-option{
+        /* border: 0.1px solid black; */
+        width: 100%;
+        height: 45%;
+        font-size:15px ;
+         display: flex;
+
+      }
+      .inputs {
+        width: 80%;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      
+      .login-btn {
+        width: 80%;
+        margin: 50px 0px;
+        padding: 10px;
+        background: linear-gradient(to right, rgb(89, 200, 89), yellow);
+        border: 0px;
+        border-radius: 5px;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 16px;
+      }
+      .login-btn:hover {
+        background: linear-gradient(to left, rgb(89, 200, 89), yellow);
+      }
+      .login-btn:active {
+        background: linear-gradient(to right, rgb(89, 200, 89), yellow);
+      }
+      #Sign-Up {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+      }
+      .register-route {
+        color: rgba(0, 0, 0, 0.452);
+      }
+      .logo {
+        display: flex;
+        width: 80px;
+        height:80px;
+        justify-self: center;
+        /* border-radius: 10px; */
+        background-color: rgb(12, 98, 69);
+        /* box-shadow: 1px 1px 8px 4px black; */
+      }
