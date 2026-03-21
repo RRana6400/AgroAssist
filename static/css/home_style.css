@@ -1,11 +1,122 @@
-*{
-  margin: 0px;
-  padding: 0px;
-}
-.container-home{
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
+* {
+        margin: 0px;
+        padding: 0px;
+      }
+      .container-home {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-image: url(/static/images/pexels-hoanggiahuy-11789292.jpg);
+        background-repeat: no-repeat;
+
+        /* z-index: -1;
+        position: relative;
+        opacity: 0.6; */
+        display: flex;
+      }
+      .home-content {
+        width: 80%;
+        height: 80%;
+        background-color: white;
+        border-radius: 35px;
+        box-shadow: 0px 0px 100px black;
+        margin: auto;
+        /* position: absolute;
+        top: 80px;
+        left: 90px; */
+
+        display: grid;
+        grid-template-columns: 10% 35% 10% 35% 10%;
+        grid-template-rows: 10% 80% 10%;
+      }
+      .tagline-div {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        display: flex;
+        justify-content: center;
+        /* align-items: center; */
+        flex-direction: column;
+      }
+      .home-img-div-p {
+        grid-row: 2/3;
+        grid-column: 4/5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .home-img-div {
+        width: 100%;
+        height: 80%;
+        background-color: rgb(178, 255, 127);
+
+        background-image: url(/static/images/pexels-bence-szemerey-337043-15203356.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 170px;
+      }
+      .tagline-h {
+        font-family: "Rubik Marker Hatch", system-ui;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 300%;
+        margin-bottom: 10px;
+        color: green;
+        /* align-self: self-start; */
+        /* Hide the text until animated */
+        overflow: hidden;
+        /* Ensure text stays on one line */
+        white-space: nowrap;
+        /* Control the width to reveal text */
+        /* Add a blinking cursor effect */
+
+        /* Apply the typing and blinking animations */
+        animation:
+          typing 3.5s steps(40, end) infinite;
+          
+      }
+      .tagline-p {
+        font-family: "SN Pro", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        /* align-self: self-start; */
+      }
+      .home-p{
+        font-size: 80%;
+      }
+      .links {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        text-align: center;
+        row-gap: 20px;
+        justify-items: center;
+        margin-top: auto;
+      }
+      .home-a {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 2px 5px;
+        width: 80%;
+        text-decoration: none;
+        color: black;
+        /* font-size: 1px; */
+      }
+      .home-a:hover {
+        background: linear-gradient(to right, rgb(4, 255, 4), white);
+      }
+      p{
+        opacity: 0.6;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+      }
+      /* Keyframes for the typing animation */
+      @keyframes typing {
+        0% {
+          width: 0;
+        }
+       
+        100% {
+          width: 100%;
+        } /* Stays typed out from 50% to 100% of the duration */
+      }
