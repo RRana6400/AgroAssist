@@ -1,20 +1,9 @@
-<!-- <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/record_manage.css" />
-  </head>
-  <body> -->
-
-    
 {% extends "index.html" %}
 
 {% block content %}
     <div class="container">
       <div class="heading">
-        <p>Manage Records</p>
+        <p>Digital Register</p>
       </div>
 
       {% with messages = get_flashed_messages(with_categories=true) %}
@@ -120,27 +109,4 @@
       </dialog>
 
     {% endblock content %}
-  <!-- </body>
-
-  <script>
-    // document.getElementById("add-btn-id").addEventListener("click", () => {
-    //   const contId = document.getElementById("table-content-id");
-    //   const desc = document.getElementById("add-desc-id").value;
-    //   const new_html = `
-    //       <div class="desc">
-    //         <div class="first">2</div>
-    //         <div class="second">${desc}</div>
-    //         <div class="third">12:00</div>
-    //         <div class="fourth">
-    //           <button class="update-btn">Update</button>
-    //           <button class="delete-btn">Delete</button>
-    //         </div>
-            
-    //       </div>
-    //       <li></li>`;
-
-      
-    //   contId.insertAdjacentHTML('beforeend', new_html);
-    // });
-  </script>
-</html> -->
+  
