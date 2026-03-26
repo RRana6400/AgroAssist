@@ -1,3 +1,4 @@
+
 {% extends "index.html" %}
 
 {% block content %}
@@ -32,11 +33,15 @@
             <div class="third">Time</div>
             <div class="fourth">Action</div>
           </div>
+
+        {% set it = namespace(i=1) %}
           {% for items in  records %}
           <form class="desc" method="post" action="/alter_record">
             <!-- for sending the record number to the flask  -->
             <input type="hidden" value="{{items.record_no}}" name="record_no">
-            <div class="first" >{{items.record_no}}</div>
+            <div class="first" >{{it.i}}</div>
+        {% set it.i = it.i+1 %} 
+        
             <div class="second">{{items.description}}</div>
             <div class="third">{{items.timestamp.strftime('%Y-%m-%d %H:%M')}}</div>
             <div class="fourth">

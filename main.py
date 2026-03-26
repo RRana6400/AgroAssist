@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime, timedelta, timezone, UTC
 from sqlalchemy import text
 from sqlalchemy import update
-
+import uuid
 
 
 
@@ -44,12 +44,14 @@ def get_ist():
     return datetime.now(ist_offset)
 
 class register_book(db.Model):
-    record_no = db.Column(db.Integer, primary_key=True)
+    record_no   = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(100), nullable=False)
-    timestamp = db.Column(db.DateTime, default=lambda:get_ist(), nullable=False)
+    timestamp   = db.Column(db.DateTime, default=lambda:get_ist(), nullable=False)
+    user_email  = db.Column(db.String(50), nullable=False)
 
-    def __init__(self, description):
-        self.description=description
+    def __init__(self, description, user_email):
+        self.description = description
+        self.user_email  = user_email
 
 
 # ----------------- ROUTES -----------------
@@ -119,7 +121,7 @@ def weather():
 @app.route("/record_management")
 @login_required
 def record():
-    all_data = db.session.execute(db.select(register_book)).scalars().all()
+    all_data = db.session.execute(db.select(register_book).where(register_book.user_email == current_user.email)).scalars().all()
     
     return  render_template("record_manage.html", records=all_data)
     
@@ -127,6 +129,11 @@ def record():
 @login_required
 def mandi():
     return  render_template("mandi.html")
+
+@app.route("/calender")
+@login_required
+def calender():
+    return  render_template("calender.html")
 
 @app.route('/logout')
 @login_required
@@ -143,7 +150,7 @@ def add_desc():
         if(input_desc == ""):
             flash("Please, Enter some description to add...", "info")
         else:
-            new_desc = register_book(description = input_desc)
+            new_desc = register_book(description = input_desc, user_email= current_user.email)
             db.session.add(new_desc)
             db.session.execute(text("ALTER TABLE register_book AUTO_INCREMENT = 1"))
             db.session.commit()
@@ -162,13 +169,13 @@ def alter_record():
             record_to_be_updated.description = new_desc
             record_to_be_updated.timestamp = get_ist()
             db.session.commit()
-            flash("Your description is updated successfully...", "success")
+            flash("Your description is updated successfully...", "info")
         elif(btn == 'delete'):
             record_to_be_deleted = register_book.query.get(record_no)
             db.session.delete(record_to_be_deleted)
             db.session.commit()
                     
-            flash(f"Record No: {record_no} has been deleted successfully...", "success")
+            flash(f"Record has been deleted successfully...", "error")
         return redirect(url_for('record'))
     
 

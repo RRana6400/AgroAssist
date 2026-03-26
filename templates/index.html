@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/static/css/login_style.css" />
     <link rel="stylesheet" href="/static/css/weather.css" />
     <link rel="stylesheet" href="/static/css/record_manage.css" />
     <link rel="stylesheet" href="/static/css/index_style.css">
     <link rel="stylesheet" href="/static/css/mandi_style.css">
-    <link rel="stylesheet" href="/static/css/home_style.css">
     <link rel="stylesheet" href="/static/css/home_style.css">
     <link rel="stylesheet" href="/static/css/calender_style.css">
 
@@ -50,8 +48,10 @@
       <div class="content-div">
         <div class="header-div">
           <div class="header-text-div">
-            <h1 class="header-text">Namaste ! {{name}}...</h1>
-            <h5 class="header-text">
+            
+            <h1 class="header-text" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">Namaste, <span id="username-id">{{current_user.username}} Ji.</span> </h1>
+            
+            <h5 class="header-text" style="font-family: cursive;">
               Welcome to your Farming Assistance, AgroAssist.
             </h5>
           </div>
@@ -68,6 +68,7 @@
       </div>
     </div>
 
+    <script src="/static/js/htmx.min.js"></script>
     <script>
       const dialog = document.getElementById("updateDialog");
 

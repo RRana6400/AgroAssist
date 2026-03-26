@@ -77,7 +77,7 @@
 }
 .blur-part-div{
   
-      backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
     border-radius: 26px;
     padding: 21px;
 }
